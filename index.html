@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>BIEK</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+  <body>
+    <div class="main container " id="main">
+        <div class="inputs row">
+           <div class="col-md-12 pt-2">
+                <p class="text-center fs-1 fw-bold text-decoration-underline">BOARD OF INTERMIDIATE EDUCATION KARACHI</p>
+           </div>
+           <div class="col-md-12 pt-2">
+                <p class="text-center fs-2 fw-bold">EXAMINATION FORM</p>
+           </div>
+            <!-- NAME -->
+
+            <div class="col-md-12 pt-2">
+                <label for="name" class="fs-3">Name</label>
+                <input type="email" class="form-control fw-bold left" id="name" oninput="upper('name')">
+            </div>
+            
+            <!-- FATHERS NAME -->
+
+            <div class="col-md-12 pt-2">
+                <label for="name" class="fs-3">Father Name</label>
+                <input type="email" class="form-control fw-bold left" id="fname" oninput="upper('fname')">
+            </div>
+            
+            <!-- PASSWORD -->
+
+            <div class="col-md-12 pt-2" >
+                <label for="exampleInputPassword1" class="fs-3">Password</label>
+                <input type="password" class="form-control left" id="pass">
+            </div>
+
+            <!-- DATE OF BIRTH -->
+
+            <div class="col-md-3 pt-2" >
+                <label for="exampleInputPassword1" class="fs-3">Date of birth</label>
+                <input type="date" class="form-control left" id="dob">
+            </div>
+
+            <!-- NATIONALITY -->
+
+            <div class="col-md-3 pt-2">
+                <label for="nation" class="fs-3">Nationality</label>
+                <select class="form-select left pur" id="nation">
+                    <option selected>Pakistani</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Afghani">Afghani</option>
+                    <option value="Indian">Indian</option>
+                    <option value="UK">UK</option>
+                    <option value="other">Other</option>
+                  </select>
+            </div>
+
+            <!-- GENDER -->
+
+            <div class="col-md-3 pt-2" >
+                <label for="" class="fs-3">Gender</label>
+                <div class="in_line">
+                    <div class="form-check fs-5">
+                        <input class="form-check-input pur" type="radio" name="flexRadioDefault" value="MALE" id="gen" onclick="genderfun('MALE')">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          Male
+                        </label>
+                      </div>
+                      <div class="form-check fs-5 ms-2">
+                        <input class="form-check-input pur" type="radio" name="flexRadioDefault" value="FEMALE" id="gen2" onclick="genderfun('FEMALE')">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          Female
+                        </label>
+                      </div>
+                </div>
+            </div>
+
+            <!-- RELIGION -->
+
+            <div class="col-md-3 pt-2">
+                <label for="religion" class="fs-3">Religion</label>
+                <select class="form-select left pur" id="religion">
+                    <option value="Islam">Islam</option>
+                    <option value="Christianity">Christianity</option>
+                    <option value="Hinduisim">Hinduisim</option>
+                    <option value="Sikhism">Sikhism</option>
+                    <option value="Bhuddism">Bhuddism</option>
+                    <option value="Parsi">Parsi</option>
+                    <option value="other">Other</option>
+                  </select>
+            </div>
+
+            <!-- ADDRESS -->
+
+            <div class="col-md-12 pt-2">
+                <div class="form-group">
+                    <label for="address" class="fs-3">Residential Address</label>
+                    <textarea class="form-control left pur" id="address" rows="3"></textarea>
+                  </div>
+            </div>
+
+            <!-- NIC -->
+
+            <div class="col-md-4 pt-2">
+                <label for="nic" class="fs-3">NIC</label>
+                <input type="text" class="form-control fw-bold pur left" id="nic">
+            </div>
+
+            <!-- PHONE -->
+
+            <div class="col-md-4 pt-2">
+                <label for="contact" class="fs-3">Contact</label>
+                <input type="tel" class="form-control pur fw-bold left" id="contact">
+            </div>
+            
+            <!-- POST -->
+            
+            <div class="col-md-4 pt-2">
+                <label for="pcode" class="fs-3">Post Code</label>
+                <input type="number" class="form-control pur fw-bold left" id="pcode">
+            </div>
+
+            <!-- MARK OF IDENTIFICATION -->
+
+            <div class="col-md-12 pt-2">
+                <label for="moi" class="fs-3">Mark of Identification</label>
+                <input type="text" class="form-control fw-bold left" id="moi">
+                <small class="form-text text-muted">Must be filled.</small>
+            </div>
+
+            <!-- IMAGE -->
+
+            <div class="col-md-12 pt-3">
+                <label for="inputpic" class="fs-5">UPLOAD IMAGE</label>
+                <input type="file" class="custom-file-input fs-6 d-block" style="background-color: blue; border-radius: 5px;" id="inputpic" onclick="pics()">
+            </div>
+
+            <!-- PREVIOUS EXAMS -->
+
+            <div class="col-md-12">
+                <label for="pcode" class="fs-2 pt-2 mt-2">Details of previous examination</label>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Name of Examination</th>
+                        <th scope="col">Board/Examinatio body</th>
+                        <th scope="col">Roll No</th>
+                        <th scope="col">Group</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">SSC OR EQUIVALENT</th>
+                        <td><input type="text" class="form-control fw-bold left pur" id="board1" oninput="upper('ssc')"></td>
+                        <td><input type="number" class="form-control fw-bold left pur" id="rol1"></td>
+                        <td>
+                            <select class="form-select left pur" id="group123">
+                                <option value="Pre-Medical">Pre-Medical</option>
+                                <option value="Pre-Engineering">Pre-Engineering</option>
+                                <option value="Commerce">Commerce</option>
+                                <option value="Arts">Arts</option>
+                                <option value="Humanities">Humanities</option>
+                            </select>
+                        </td>
+                    </tr>
+                      <tr>
+                        <th scope="row">HSC PART I</th>
+                        <td><input type="email" class="form-control fw-bold left" id="board2" oninput="upper('hsc')"></td>
+                        <td><input type="email" class="form-control fw-bold left" id="rol2"></td>
+                        <td>
+                            <select class="form-select left pur" id="group2">
+                                <option value="Pre-Medical">Pre-Medical</option>
+                                <option value="Pre-Engineering">Pre-Engineering</option>
+                                <option value="Commerce">Commerce</option>
+                                <option value="Arts">Arts</option>
+                                <option value="Humanities">Humanities</option>
+ 
+                              </select>
+                        </td>
+                    </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <div class="col-md-12">
+                <table class="table" style="border-bottom: 2px solid black;"> 
+                  <thead>
+                    <tr>
+                        <th scope="col">Year</th>
+                        <th scope="col">Marks</th>
+                        <th scope="col">Grade</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control fw-bold left" id="year" maxlength="4" ></td>
+                        <td><input type="number" class="form-control fw-bold left" id="marks"></td>
+                        <td><input type="text" class="form-control fw-bold left" id="grade" maxlength="4" oninput="upper('grade')"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control fw-bold left" id="year2" maxlength="4" ></td>
+                        <td><input type="number" class="form-control fw-bold left" id="marks2" ></td>
+                        <td><input type="text" class="form-control fw-bold left" id="grade2" oninput="upper('grade2')"></td>
+                    </tr>
+                </thead>
+                </table>
+            </div>
+
+            <!-- SELECTED SUBJECTS -->
+
+
+            <div class="col-md-12">
+                <label for="pcode" class="fs-2">Select Subjects of Interest</label>
+                <table class="table" style="border-bottom: 2px solid black;">
+                    <thead>
+                        <tr>
+                            <th scope="col" colspan="3">Compulsory Subjects</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>FOR NORMAL CANDIDIATED</td>
+                            <td>URDU NORMAL</td>
+                            <td>UN</td>
+                            <td><input class="form-check-input position-static" type="checkbox" id="urdunormal" value="URDU NORMAL" onclick="selsub('un')" aria-label="..."></td>
+                        </tr>
+                        <tr>
+                            <td>WITH BOARD'S PERMISSION</td>
+                            <td>URDU EASY</td>
+                            <td>UE</td>
+                            <td><input class="form-check-input position-static" type="checkbox" id="ueasy" value="URDU EASY" onclick="selsub('ue')"></td>
+                        </tr>
+                        <tr>
+                            <td>WITH BOARD'S PERMISSION</td>
+                            <td>URDU NON MOTHER TONGUE</td>
+                            <td>UG</td>
+                            <td><input class="form-check-input position-static" type="checkbox" id="urdunon" onclick="selsub('unt')" aria-label="..."></td>
+                        </tr>
+                        <tr>
+                            <td>FOR NORMAL CANDIDIATED</td>
+                            <td>HISTORY & CULTURE OF PAKISTAN</td>
+                            <td>HC</td>
+                            <td><input class="form-check-input position-static" type="checkbox" id="hcpak" value="HISTORY & CULTURE OF PAKISTAN" onclick="selsub('hcp')" aria-label="..."></td>
+                        </tr>
+                        <tr>
+                            <td>FOR NORMAL CANDIDIATED</td>
+                            <td>ENGLISH NORMAL</td>
+                            <td>EN</td>
+                            <td><input class="form-check-input position-static" type="checkbox" id="enormal" value="ENGLISH NORMAL" onclick="selsub('en')" aria-label="..."></td>
+                        </tr>
+                        <tr>
+                            <td>WITH BOARD'S PERMISSION</td>
+                            <td>ENGLISH ADVANCED</td>
+                            <td>EA</td>
+                            <td><input class="form-check-input position-static" type="checkbox" id="eadvance" value="ENGLISH ADVANCED" onclick="selsub('ea')" aria-label="..."></td>
+                        </tr>
+                        <tr>
+                            <td>FOR NORMAL CANDIDIATED</td>
+                            <td>ISLAMIAT</td>
+                            <td>IE</td>
+                            <td><input class="form-check-input position-static" type="checkbox" id="islamiyat" value="ISLAMIYAT" onclick="selsub('islam')" aria-label="..."></td>
+                        </tr>
+                        <tr>
+                            <td>FOR NORMAL CANDIDIATED</td>
+                            <td>CIVICS</td>
+                            <td>CI</td>
+                            <td><input class="form-check-input position-static" type="checkbox" id="civic" value="CIVICS" onclick="selsub('civi')" aria-label="..."></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-md-12 d-flex justify-content-center">
+                <button onclick="getdetails()" class="pt-2 pb-2 mb-2 fs-4 mt-3 buttonhov" style="width: 80%; background-color: black; color: white; outline: none;">SUBMIT</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="details container mt-2 mb-2" id="det" style="border: 2px solid black; border-radius: 5px; ">
+        <div class="deatailmain row">
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col" colspan="3" class="text-center fs-1">Details</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 2px solid blue;">
+                            <td scope="col" colspan="3" class="text-center fs-3"><img src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX25634104.jpg" width="120px" height="120px" alt=""></td>
+                        </tr>
+                      <tr>
+                        <th scope="row">NAME</th>
+                        <td id="nameout" colspan="2" class="fs-5 "></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">FATHERS NAME</th>
+                        <td id="fnameout" colspan="2" class="fs-5 "></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">DATE OF BIRTH</th>
+                        <td id="dobout" colspan="2" class="fs-5 "></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">NATIONALITY</th>
+                        <td id="nationout" colspan="2" class="fs-5 "></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">GENDER</th>
+                        <td id="genderout" colspan="2" class="fs-5 "></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">RELIGION</th>
+                        <td id="religionout" colspan="2" class="fs-5 "></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">RESIDENTIAL ADDRESS</th>
+                        <td id="addressout" colspan="2" class="fs-5 "></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">NIC</th>
+                        <td id="nicout" colspan="2" class="fs-5 "></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">CONTACT</th>
+                        <td id="contactout" colspan="2" class="fs-5 "></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">POST CODE</th>
+                        <td id="postout" colspan="2" class="fs-5 "></td>
+                      </tr>
+                      <tr style="border-bottom: 2px solid blue;">
+                        <th scope="row">MARK OF IDENTIFICATION</th>
+                        <td id="moiout" colspan="2" class="fs-5 "></td>
+                      </tr>
+                      <tr>
+                        <th scope="col" colspan="3" class="text-center fs-3">Previous Exams</th>
+                      </tr>
+                      <tr>
+                        <th scope="col" colspan="3" style="border-bottom: 2px solid blue;" class="text-center fs-5">SSC OR Equivalent</th>
+                      </tr>
+                      <tr>
+                        <th scope="row">Board/Examination Body</th>  
+                        <td id="exambodyout" colspan="2" class="fs-5 "></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Roll No</th>  
+                        <td id="rolnoout" colspan="2" class="fs-5 "></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Group</th>  
+                        <td id="groupout" colspan="2" class="fs-5 "></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Year</th>  
+                        <td id="yearout" colspan="2" class="fs-5 "></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Marks</th>  
+                        <td id="marksout" colspan="2" class="fs-5 "></td>
+                      </tr>
+                      <tr style="border-bottom: 2px solid blue;">
+                        <th scope="row">Grade</th>  
+                        <td id="gradeout" colspan="2" class="fs-5 " ></td>
+                      </tr>
+                      <tr style="border-bottom: 2px solid blue;">
+                        <th scope="col" colspan="3" class="text-center fs-5">HSC PART I</th>
+                      </tr>
+                      <tr>
+                        <th scope="row">Board/Examination Body</th>  
+                        <td id="exambodyout2" colspan="2" class="fs-5 "></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Roll No</th>  
+                        <td id="rolnoout2" colspan="2" class="fs-5 "></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Group</th>  
+                        <td id="groupout2" colspan="2" class="fs-5 "></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Year</th>  
+                        <td id="yearout2" colspan="2" class="fs-5 "></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Marks</th>  
+                        <td id="marksout2" colspan="2" class="fs-5 "></td>
+                      </tr>
+                      <tr style="border-bottom: 2px solid blue;">
+                        <th scope="row">Grade</th>  
+                        <td id="gradeout2" colspan="2" class="fs-5 "></td>
+                      </tr>
+                      <tr style="border-bottom: 2px solid blue;">
+                        <th scope="col" colspan="3" class="text-center fs-5">SELECTED SUBJECTS</th>
+                      </tr>
+                      <tr>  
+                        <th scope="row">URDU NORMAL</th>  
+                        <td  class="fs-5 " colspan="2"><input id="un" class="form-check-input position-static" type="checkbox" disabled></td>
+                      </tr>              
+                      <tr>  
+                        <th scope="row">URDU EASY</th>  
+                        <td class="fs-5 " colspan="2"><input id="ue" class="form-check-input position-static" type="checkbox" disabled></td>
+                      </tr>              
+                      </tr>              
+                      <tr>  
+                        <th scope="row">URDU NON MOTHER TONGUE</th>  
+                        <td class="fs-5 " colspan="2"><input id="unt" class="form-check-input position-static" type="checkbox" disabled></td>
+                      </tr>              
+                      <tr>  
+                        <th scope="row">HISTORY & CULTURE OF PAKISTAN</th>  
+                        <td class="fs-5 " colspan="2"><input id="hcp" class="form-check-input position-static" type="checkbox" disabled></td>
+                      </tr>              
+                      <tr>  
+                        <th scope="row">ENGLISH NORMAL</th>  
+                        <td class="fs-5 " colspan="2"><input id="en" class="form-check-input position-static" type="checkbox" disabled></td>
+                      </tr>              
+                      <tr>  
+                        <th scope="row">ENGLISH ADVANCED</th>  
+                        <td class="fs-5 " colspan="2"><input id="ea" class="form-check-input position-static" type="checkbox" disabled></td>
+                      </tr>              
+                      <tr>  
+                        <th scope="row">ISLAMIYAT</th>  
+                        <td class="fs-5 " colspan="2"><input id="islam" class="form-check-input position-static" type="checkbox" disabled></td>
+                      </tr>              
+                      </tr>              
+                      <tr style="border-bottom: 2px solid blue;">   
+                        <th scope="row">CIVICS</th>  
+                        <td class="fs-5 " colspan="2"><input id="civi" class="form-check-input position-static" type="checkbox" disabled></td>
+                      </tr>              
+                  </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
